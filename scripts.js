@@ -25,6 +25,7 @@ function MyFunction() {
                             document.getElementById("line").innerHTML = "Player is Online";
                             document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
                         } else Push.create('Player was kicked!')
+                                document.getElementById("line").innerHTML = "Player is Offline";
 
 
                     })
