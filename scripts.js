@@ -25,11 +25,11 @@ function MyFunction() {
                             document.getElementById("line").innerHTML = "Player is Online";
                             document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
                         } else Push.create('Player was kicked!')
-                                document.getElementById("line").innerHTML = "Player is Offline";
+                                
 
 
                     })
-            }, 60000); // use 60000 for 1 minute 
+            }, 30000); // use 60000 for 1 minute 
 
         })
 
