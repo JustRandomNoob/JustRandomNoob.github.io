@@ -14,8 +14,7 @@ function MyFunction() {
 
             if (GameType == 'dynamic') {
 
-                document.getElementById("line").innerHTML = "Player is Online";
-                document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
+                console.log("lol");
             } else {
                 Push.create('Player was kicked!')
                 document.getElementById("line").innerHTML = "Player was kicked!";
@@ -28,7 +27,3 @@ function MyFunction() {
 }
 
 window.onload = MyFunction;
-window.addEventListener('load', (event) => {
-    alert("LOADED");
-}); 
-
