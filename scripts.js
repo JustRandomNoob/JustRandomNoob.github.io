@@ -17,16 +17,15 @@ function MyFunction() {
                     .then((status) => {
 
                         const GameType = status.session.mode;
-                        if (!status.session.online == 'true') {
-                            Push.create('Player is offline!');
 
-                        } else if (GameType == 'dynamic') {
+                        if (GameType == 'dynamic') {
 
                             document.getElementById("line").innerHTML = "Player is Online";
                             document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
-                        } else Push.create('Player was kicked!')
-                                
-
+                        } else {
+                            Push.create('Player was kicked!')
+                            document.getElementById("line2").innerHTML = `Player was kicked!`;
+                        }
 
                     })
             }, 30000); // use 60000 for 1 minute 
