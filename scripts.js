@@ -32,10 +32,3 @@ window.addEventListener('load', (event) => {
     alert("LOADED");
 });
 
-document.addEventListener('readystatechange', (event) => {
-    alert("READY STATE CHANGED");
-});
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    alert("DOMCONTENT LOADED");
-});
