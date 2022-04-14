@@ -2,35 +2,30 @@
 function MyFunction() {
 
     // document.getElementById("line2").innerHTML = "Player was not found in skyblock island";
-    document.getElementById("line").innerHTML = "Tracking Started Updating in 30 seconds!";
+    document.getElementById("run1").innerHTML = "Website is running";
 
     fetch("https://api.hypixel.net/status?uuid=71e75e00-580d-4f2e-b026-5f6785dceca2&key=e1084c05-ee59-4bc1-926b-abb936702cc5")
         .then(result => result.json())
         .then((status) => {
             // now the code    
-            setInterval(async function () {
 
-                //The code
+            //The code
+            const GameType = status.session.mode;
 
-                fetch("https://api.hypixel.net/status?uuid=71e75e00-580d-4f2e-b026-5f6785dceca2&key=e1084c05-ee59-4bc1-926b-abb936702cc5")
-                    .then(result => result.json())
-                    .then((status) => {
+            if (GameType == 'dynamic') {
 
-                        const GameType = status.session.mode;
+                document.getElementById("line").innerHTML = "Player is Online";
+                document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
+            } else {
+                Push.create('Player was kicked!')
+                document.getElementById("line").innerHTML = "Player was kicked!";
+                document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
+            }
 
-                        if (GameType == 'dynamic') {
-
-                            document.getElementById("line").innerHTML = "Player is Online";
-                            document.getElementById("line2").innerHTML = `Gamemode: ${GameType}`;
-                        } else {
-                            Push.create('Player was kicked!')
-                            document.getElementById("line2").innerHTML = `Player was kicked!`;
-                        }
-
-                    })
-            }, 30000); // use 60000 for 1 minute 
 
         })
 
 }
+
+window.onload = MyFunction;
 
