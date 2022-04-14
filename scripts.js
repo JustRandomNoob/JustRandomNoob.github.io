@@ -30,5 +30,5 @@ function MyFunction() {
 window.onload = MyFunction;
 window.addEventListener('load', (event) => {
     alert("LOADED");
-});
+}); 
 
